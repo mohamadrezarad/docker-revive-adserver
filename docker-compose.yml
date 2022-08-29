@@ -1,11 +1,4 @@
-version: '3'
-
-variables:
-  - DB_HOST=mysql
-  - DB_PORT=3306
-  - DB_NAME=revive_adserver_402
-  - DB_USERNAME=revive
-  - DB_PASSWORD=revive
+version: '3.6'
 
 services:
   revive:
@@ -17,9 +10,9 @@ services:
       - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
     ports:
-    - 8081:80
+      - 8081:80
     links:
-    - mysql
+      - mysql
 
   mysql:
     image: mariadb:latest
